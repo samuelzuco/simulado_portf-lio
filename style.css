@@ -1,0 +1,304 @@
+/* =====================================================
+   ÍNDICE (use Ctrl+F para pular para a parte):
+   1. VARIÁVEIS (cores)  2. RESET  3. CONTAINER
+   4. NAVBAR  5. HERO  6. SOBRE  7. PROJETOS/CARDS
+   8. CONTATO  9. RESPONSIVO
+   ===================================================== */
+
+
+/* ============ 1. VARIÁVEIS: TROCAR CORES AQUI ============
+   Mudou a cor aqui = mudou no site inteiro.
+   Se não quiser usar variável, troque var(--x) pelo código da cor direto. */
+:root {
+    --cor-fundo: #faf7f2;     /* fundo creme (hero e projetos) */
+    --cor-verde: #3d6b4f;     /* botão, habilidades */
+    --cor-laranja: #d9734e;   /* cargo, tags dos projetos */
+    --cor-escura: #2b2a28;    /* títulos e fundo do rodapé */
+    --cor-texto: #5a5650;     /* parágrafos (cinza) */
+    --cor-bege: #efe6dc;      /* fundo das tags de habilidade */
+}
+
+
+/* ============ 2. RESET: zera margens e ajusta tamanho ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   /* width passa a incluir padding e borda (evita elemento "estourar") */
+}
+
+html {
+    scroll-behavior: smooth;  /* rolagem suave ao clicar no menu */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;   /* TROCAR FONTE da página inteira */
+    color: var(--cor-texto);
+    line-height: 1.6;         /* espaço entre linhas do texto */
+}
+
+a { text-decoration: none; }  /* tira sublinhado dos links */
+img { max-width: 100%; display: block; }  /* imagem nunca passa da caixa dela */
+ul { list-style: none; }      /* tira as bolinhas da lista */
+
+
+/* ============ 3. CONTAINER: caixa centralizada ============
+   Largura do conteúdo = 992px. Mudar aqui muda todas as seções.
+   margin: 0 auto  => centraliza a caixa na horizontal. */
+.container {
+    max-width: 992px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Título centralizado (Projetos) */
+.titulo-centro { text-align: center; }
+
+
+/* ============ 4. NAVBAR ============ */
+.navbar {
+    background-color: var(--cor-fundo);
+    border-bottom: 1px solid #ece5da;      /* linha fina embaixo */
+    padding: 22px 0;                       /* ALTURA do menu: 22px em cima e embaixo */
+}
+
+/* flex + space-between = logo na esquerda, menu na direita */
+.navbar-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;                   /* alinha verticalmente */
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--cor-escura);
+}
+
+.menu a {
+    margin-left: 32px;                     /* ESPAÇO entre os links */
+    color: var(--cor-texto);
+    font-size: 16px;
+}
+
+.menu a:hover { color: var(--cor-verde); } /* cor ao passar o mouse */
+
+
+/* ============ 5. HERO ============ */
+.hero {
+    background-color: var(--cor-fundo);
+    text-align: center;                    /* centraliza TODO texto e imagem inline dentro */
+    padding: 72px 0 88px;                  /* cima | laterais | baixo: espaço da seção */
+}
+
+/* Foto redonda: largura = altura + border-radius 50% */
+.foto {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;                    /* 50% = círculo */
+    margin: 0 auto 28px;                   /* auto = centraliza a imagem (precisa do display:block do reset) */
+}
+
+.hero h1 {
+    font-size: 40px;                       /* TAMANHO do nome */
+    color: var(--cor-escura);
+}
+
+.cargo {
+    font-size: 18px;
+    color: var(--cor-laranja);
+    margin-top: 8px;
+}
+
+.descricao {
+    max-width: 480px;                      /* limita a largura => texto quebra em 3 linhas */
+    margin: 24px auto 32px;                /* auto nas laterais centraliza o bloco */
+    font-size: 16px;
+}
+
+/* Botões lado a lado, centralizados */
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 16px;                             /* ESPAÇO entre os botões */
+}
+
+/* .btn = parte comum dos dois botões */
+.btn {
+    padding: 14px 28px;                    /* tamanho do botão: vertical | horizontal */
+    border-radius: 30px;                   /* bem arredondado (formato "pílula") */
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid var(--cor-verde);
+}
+
+/* botão preenchido */
+.btn-cheio {
+    background-color: var(--cor-verde);
+    color: #fff;
+}
+
+/* botão só com borda */
+.btn-borda {
+    background-color: transparent;
+    color: var(--cor-verde);
+}
+
+.btn:hover { opacity: 0.85; }              /* efeito ao passar o mouse */
+
+
+/* ============ 6. SOBRE MIM ============ */
+.sobre {
+    background-color: #fff;                /* fundo branco */
+    padding: 80px 0;
+}
+
+/* GRID de 2 colunas: esquerda maior (1.2) e direita menor (1) */
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;      /* TROCAR proporção das colunas (ex: 1fr 1fr = iguais) */
+    gap: 60px;                             /* espaço entre as colunas */
+}
+
+.sobre h2 {
+    font-size: 28px;
+    color: var(--cor-escura);
+    margin-bottom: 16px;
+}
+
+.habilidades h3 {
+    font-size: 18px;
+    color: var(--cor-escura);
+    margin-bottom: 16px;
+}
+
+/* .tags = linha de "etiquetas" que quebra de linha sozinha */
+.tags {
+    display: flex;
+    flex-wrap: wrap;                       /* quebra para a linha de baixo quando não cabe */
+    gap: 10px;
+}
+
+/* Tag verde (habilidades) */
+.tag-verde {
+    background-color: var(--cor-bege);
+    color: var(--cor-verde);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* ============ 7. PROJETOS / CARDS ============ */
+.projetos {
+    background-color: var(--cor-fundo);
+    padding: 80px 0;
+}
+
+.projetos h2 {
+    font-size: 28px;
+    color: var(--cor-escura);
+}
+
+.subtitulo {
+    text-align: center;
+    margin: 8px 0 48px;
+}
+
+/* .cards = organiza os cards em colunas iguais.
+   2 cards lado a lado: repeat(2, 1fr). Quer 3? Troque para repeat(3, 1fr). */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+/* Cada card: caixa branca com borda e cantos arredondados */
+.card {
+    background-color: #fff;
+    border: 1px solid #ece5da;
+    border-radius: 16px;                   /* arredondamento do card */
+    overflow: hidden;                      /* corta a imagem nos cantos arredondados */
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);  /* sombra: x y desfoque cor */
+}
+
+/* Imagem do card: no modelo ela NÃO ocupa o card todo (400px, colada no canto) */
+.card img {
+    width: 400px;                          /* LARGURA da imagem */
+    max-width: 100%;                       /* no celular nunca passa do card */
+    height: 260px;                         /* ALTURA da imagem */
+}
+
+.card-corpo { padding: 24px; }             /* espaço interno do texto do card */
+
+.card h3 {
+    font-size: 18px;
+    color: var(--cor-escura);
+    margin-bottom: 8px;
+}
+
+.card p {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+/* Tag laranja (tecnologias do projeto) */
+.tag-laranja {
+    background-color: #f7e4dc;
+    color: #a84a2a;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* ============ 8. CONTATO (rodapé escuro) ============ */
+.contato {
+    background-color: var(--cor-escura);
+    text-align: center;
+    padding: 90px 0 40px;
+}
+
+.contato h2 {
+    color: #fff;
+    font-size: 28px;
+}
+
+.contato-texto {
+    max-width: 420px;
+    margin: 16px auto 32px;
+    color: #cfc8bd;
+}
+
+.contato-lista li { margin-bottom: 12px; }
+
+.contato-lista a {
+    color: #fff;
+    font-size: 15px;
+}
+
+.contato-lista a:hover { text-decoration: underline; }
+
+.copyright {
+    margin-top: 60px;
+    font-size: 13px;
+    color: #a8a195;
+}
+
+
+/* ============ 9. RESPONSIVO (celular) ============
+   Tudo dentro do @media só vale quando a tela tem NO MÁXIMO 768px.
+   Regra do básico: transformar colunas em 1 coluna. */
+@media (max-width: 768px) {
+    .sobre-grid,
+    .cards {
+        grid-template-columns: 1fr;        /* 1 coluna só */
+    }
+
+    .botoes { flex-direction: column; }    /* botões um embaixo do outro */
+    .menu a { margin-left: 16px; }
+}

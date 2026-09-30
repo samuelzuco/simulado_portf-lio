@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <!-- Necessário para o site funcionar bem no celular (responsividade) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TROCAR: título que aparece na aba do navegador -->
+    <title>Marina Costa | Portfólio</title>
+    <!-- Liga o CSS. Se o CSS "não funciona", confira este nome/caminho -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ================= NAVBAR (menu do topo) ================= -->
+    <header class="navbar">
+        <!-- .container = caixa centralizada de 992px (usada em TODAS as seções) -->
+        <div class="container navbar-conteudo">
+            <span class="logo">Marina Costa</span>
+            <nav class="menu">
+                <!-- href="#id" leva até a seção que tem esse id -->
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= HERO (apresentação) ================= -->
+    <section class="hero">
+        <div class="container">
+            <!-- TROCAR FOTO: troque o src e o nome do arquivo dentro de img/ -->
+            <img class="foto" src="img/avatar.svg" alt="Foto de Marina Costa">
+            <h1>Marina Costa</h1>
+            <h2 class="cargo">Desenvolvedora Front-End</h2>
+            <p class="descricao">
+                Crio interfaces web rápidas, acessíveis e agradáveis de usar. Nos últimos 4 anos,
+                trabalhei com startups e agências para transformar protótipos em produtos reais.
+            </p>
+            <div class="botoes">
+                <!-- Dois botões: mesma classe .btn + uma classe extra para a cor -->
+                <a href="#projetos" class="btn btn-cheio">Ver projetos</a>
+                <a href="#contato" class="btn btn-borda">Entrar em contato</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SOBRE MIM (2 colunas) ================= -->
+    <section class="sobre" id="sobre">
+        <!-- .sobre-grid coloca texto (esquerda) e habilidades (direita) lado a lado -->
+        <div class="container sobre-grid">
+            <div class="sobre-texto">
+                <h2>Sobre mim</h2>
+                <p>
+                    Sou formada em Sistemas de Informação e me especializei em desenvolvimento
+                    front-end. Gosto de transformar ideias complexas em telas simples de usar,
+                    sempre prestando atenção em performance e acessibilidade. Fora do código,
+                    gosto de fotografia e trilhas.
+                </p>
+            </div>
+            <div class="habilidades">
+                <h3>Habilidades</h3>
+                <div class="tags">
+                    <!-- Para adicionar habilidade: copie uma linha <span> -->
+                    <span class="tag-verde">HTML5</span>
+                    <span class="tag-verde">CSS3</span>
+                    <span class="tag-verde">JavaScript</span>
+                    <span class="tag-verde">React</span>
+                    <span class="tag-verde">Figma</span>
+                    <span class="tag-verde">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROJETOS (cards) ================= -->
+    <section class="projetos" id="projetos">
+        <div class="container">
+            <h2 class="titulo-centro">Projetos</h2>
+            <p class="subtitulo">Uma seleção de trabalhos recentes.</p>
+
+            <!-- .cards = grid de 2 colunas. Para 3 cards, mude no CSS (repeat(3, 1fr)) -->
+            <div class="cards">
+
+                <!-- CARD 1: para criar outro card, copie de <article> até </article> -->
+                <article class="card">
+                    <img src="img/projeto1.svg" alt="Painel Financeiro">
+                    <div class="card-corpo">
+                        <h3>Painel Financeiro</h3>
+                        <p>Painel de controle financeiro com gráficos interativos e modo escuro.</p>
+                        <div class="tags">
+                            <span class="tag-laranja">React</span>
+                            <span class="tag-laranja">Chart.js</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- CARD 2 -->
+                <article class="card">
+                    <img src="img/projeto2.svg" alt="App Clima Agora">
+                    <div class="card-corpo">
+                        <h3>App Clima Agora</h3>
+                        <p>Aplicativo de previsão do tempo com busca por cidade e animações suaves.</p>
+                        <div class="tags">
+                            <span class="tag-laranja">JavaScript</span>
+                            <span class="tag-laranja">API REST</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CONTATO / RODAPÉ (fundo escuro) ================= -->
+    <footer class="contato" id="contato">
+        <div class="container">
+            <h2>Vamos conversar?</h2>
+            <p class="contato-texto">
+                Estou disponível para novos projetos e oportunidades. Me manda uma mensagem!
+            </p>
+            <!-- Ícones: emojis para ser rápido. Se a prova pedir ícones, use <img src="img/icone.png"> -->
+            <ul class="contato-lista">
+                <li>✉️ <a href="mailto:marina.costa@email.com">marina.costa@email.com</a></li>
+                <li>🐙 <a href="https://github.com/marinacosta" target="_blank">github.com/marinacosta</a></li>
+                <li>💼 <a href="https://linkedin.com/in/marinacosta" target="_blank">linkedin.com/in/marinacosta</a></li>
+            </ul>
+            <p class="copyright">© 2026 Marina Costa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
